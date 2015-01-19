@@ -1,6 +1,10 @@
 $lightgray: #797979;
 $gray: #595959;
 
+$z100: 100;
+$z200: 200;
+$z300: 300;
+
 @mixin input-placeholder {
     &.placeholder { @content; }
     &:-moz-placeholder { @content; }
@@ -16,3 +20,70 @@ $gray: #595959;
     clear: both;
   }
 }
+
+@mixin social-buttons {
+	font-size: 0.8rem;
+	color: $lightgray;
+	margin-left: 0.3rem;
+	font-weight: 300;
+	transition: color 0.35s;
+	&:hover {
+		color: $gray;
+	}
+}
+
+
+
+@keyframes bounce {
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  95% {
+    transform: translate3d(0,-1px,0);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  95% {
+    transform: translate3d(0,-1px,0);
+  }
+}
+
+.bounce {
+	animation-duration: 1s;
+	animation-name: bounce;
+	transform-origin: center bottom;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-name: bounce;
+	-webkit-transform-origin: center bottom;
+}
+
+
+

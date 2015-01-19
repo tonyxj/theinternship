@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Intern Ship | Inbox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel=stylesheet href="css/main.css"/>
+    <link rel=stylesheet href="css/inbox.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Alegreya:700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+
+	<div id="overlay">
+		<div id="confirm-box">
+			<p>Are you sure you want to decline the invite?</p>
+			<div class="response-buttons">
+				<button id="confirm-decline">Yes, decline it.</button>
+				<button>No, let's go back.</button>
+			</div>
+		</div>
+	</div>
+	<div id="overlay2">
+		<div id="confirm-box2">
+			<p>How would you like to reply?</p>
+			<div class="response-buttons2">
+				<button id="smaller-choice">I'd love to experience life at the quintessential Silicon Valley garage startup. Sign me up for the smaller company.</button>
+				<button  id="larger-choice">I'd love to explore sunny Southern California while seeing fast growth first hand. Sign me up for the larger startup.</button>
+			</div>
+		</div>
+	</div>
+	<header>
+		<div class="header-inner">
+			<h1>The Intern Ship</h1>
+			<div class="search-container">
+				<input class="search-bar">
+			</div>
+			
+			<div class="settings"></div>
+		</div>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="#">Profile</a>
+			<a href="#">Positions</a>
+			<a href="#">Contacts</a>
+			<a href="inbox.html" class="current-page">Inbox</a>
+		</nav>
+	</header>
+	<div class="main-content">
+		<section class="inbox-status">
+			<p class="notify current-tab notifications">Notifications</p><br>
+			<p class="messages">Messages</p><br>
+			<p>Trash</p><br>
+		</section>
+		<section class="inbox-message friend-feed">
+			<p id="end-scenario1">Request declined.<br>This is the end of scenario 1. Let's try <a href="inbox.html">other scenarios</a>.</p>
+			<section class="entry entry1" id="request1">
+				<img src="img/friend-request.png" class="profile-img">
+				<div class="entry-content">
+					<h3>Elizabeth Holmes<span>, Campus Recruitment Lead at Luvant HR</span></h3>
+					<p class="invite-message">would like to you as a contact.</p>
+					<div class="social-buttons">
+						<a href="#" class="accept-request">Accept</a>
+						<a href="#" class="decline-request">Decline</a>
+					</div>
+					<div class="message-buttons">
+						<a href="#" class="reply-message">Reply</a>
+						<a href="#" class="delete-message">Delete</a>
+					</div>
+					<div class="mention-buttons">
+						<a href="#" class="view-post">View Post</a>
+						<a href="#" class="delet-post">Delete</a>
+					</div>
+				</div>
+			</section>
+			<section class="entry entry2">
+				<img src="img/self-profile.png" class="profile-img">
+				<div class="entry-content2">
+					<h3>Emily Stewart<span>, CS and Econ major with experience at @Facebook and @Dropbox</span></h3>
+					<p class="smaller-company">Hi Liz, I'd love to experience life at the quintessential Silicon Valley garage startup. Would you be able to send me some info for the smaller company? Thanks!</p>
+					<p class="larger-company">Hi Liz, I'd love to explore sunny Southern California while seeing fast growth first hand. Would you be able to send me some info  the larger startup? Thanks!</p>
+					<div class="message-buttons message-buttons2">
+						<a href="#" >Reply</a>
+						<a href="#">Delete</a>
+					</div>
+				</div>
+			</section>
+			<p id="end-scenario2">Message Sent. <br>We'll wait for Liz's feedback. This the end of scenario 2.
+			Let's try <a href="#" class="retry-scenario2">another one</a>.</p>
+		</section>
+	</div>
+	
+	<script type="text/javascript" src="js/interaction.js"></script>
+</body>
+</html>

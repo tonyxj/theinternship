@@ -1,0 +1,120 @@
+@keyframes bounce {
+  /* line 38, ../sass/partials/_variables.scss */
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 43, ../sass/partials/_variables.scss */
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  /* line 48, ../sass/partials/_variables.scss */
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  /* line 53, ../sass/partials/_variables.scss */
+  95% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+@-webkit-keyframes bounce {
+  /* line 59, ../sass/partials/_variables.scss */
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 64, ../sass/partials/_variables.scss */
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  /* line 69, ../sass/partials/_variables.scss */
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  /* line 74, ../sass/partials/_variables.scss */
+  95% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+/* line 79, ../sass/partials/_variables.scss */
+.bounce {
+  animation-duration: 1s;
+  animation-name: bounce;
+  transform-origin: center bottom;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+}
+
+/* line 3, ../sass/inbox.scss */
+.inbox-status {
+  width: 13%;
+  float: left;
+}
+/* line 6, ../sass/inbox.scss */
+.inbox-status p {
+  display: inline-block;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}
+/* line 13, ../sass/inbox.scss */
+.inbox-status .notify:after {
+  top: -0.1rem;
+  right: -0.9rem;
+}
+
+/* line 19, ../sass/inbox.scss */
+.inbox-message {
+  margin-top: 0;
+  width: 84%;
+  float: right;
+}
+
+/* line 28, ../sass/inbox.scss */
+.social-buttons,
+.message-buttons,
+.mention-buttons {
+  margin-top: 0.5rem;
+  float: left;
+}
+/* line 31, ../sass/inbox.scss */
+.social-buttons a,
+.message-buttons a,
+.mention-buttons a {
+  font-size: 0.8rem;
+  color: #797979;
+  margin-left: 0.3rem;
+  font-weight: 300;
+  transition: color 0.35s;
+  font-size: 1rem;
+}
+/* line 30, ../sass/partials/_variables.scss */
+.social-buttons a:hover,
+.message-buttons a:hover,
+.mention-buttons a:hover {
+  color: #595959;
+}
+/* line 35, ../sass/inbox.scss */
+.social-buttons a:first-of-type,
+.message-buttons a:first-of-type,
+.mention-buttons a:first-of-type {
+  margin-left: 0;
+}
+
+/* line 40, ../sass/inbox.scss */
+#end-scenario2 {
+  margin-left: 7.4%;
+}

@@ -18,21 +18,52 @@ header {
 		position: absolute;
 		top: 1.2rem;
 		left: 18%;
+		.current-page {
+			opacity: 1;
+			color: $gray;
+			border-bottom: 3px solid rgba($gray, 0.9);
+		}
 		a {
 			font-size: 1.05rem;
 			color: $lightgray;
 			text-decoration: none;
 			padding: 5px;
+			padding-bottom: 14px;
 			margin-right: 0.9rem;
-			transition: color 0.35s;
+			transition: all 0.35s;
+			opacity: 0.8;
 
 			&:hover {
 				color: $gray;
+				opacity: 1;
 			}
 			&:first-of-type {
 				padding-left: 0;
 			}
 		}
+	}
+}
+
+.current-tab {
+	opacity: 1 !important;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.notify {
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		top: -0rem;
+		right: -0.4rem;
+		background-image:url("../img/notify.png");
+		background-repeat: no-repeat;
+		background-size: contain;
 	}
 }
 
@@ -50,11 +81,12 @@ header {
 	
 	.search-container {
 		display: inline-block;
-		float: right;
 		width: 16%;
 		margin-right: 18%;
+		float: right;
 		position: relative;
 		.search-bar {
+			display: inline-block;
 			border: 1px solid rgba($lightgray, 0.3);
 			margin-top: 0.87rem;
 			height: 1.7rem;
@@ -89,7 +121,7 @@ header {
 
 .main-content {
 	clear: both;
-	margin-top: 3rem;
+	margin-top: 3.5rem;
 	width: 64;
 	margin-left: 18%;
 	margin-right: 18%;
@@ -215,19 +247,64 @@ header {
 	}
 }
 
-
-.social {
+.social-buttons {
 	clear: both;
-	margin-top: 0.2rem;
+	margin-top: 0.1rem;
 	float: right;
 	a {
-		font-size: 0.8rem;
-		color: $lightgray;
-		margin-left: 0.3rem;
-		font-weight: 300;
-		transition: color 0.35s;
+		@include social-buttons;
+	}
+}
+
+#overlay, #overlay2 {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	display: block;
+	background-color:rgba(black, 0.8);
+	z-index: $z100;
+}
+
+#confirm-box, #confirm-box2 {
+	color: $gray;
+	width: 40%;
+	margin: 15% 30%;
+	background-color: white;
+	border-radius: 0.5rem;
+	padding: 3rem 2rem;
+	p {
+		font-size: 1.2rem;
+		margin-right: 10%;
+		margin-bottom: 1.5rem;
 		&:hover {
-			color: $gray;
+			cursor: pointer;
+		}
+	}
+	.response-buttons, .response-buttons2 {
+		button {
+			&:first-of-type {
+				margin-right: 0.5rem;
+			}
+			padding: 0.5rem 1rem;
+			text-align: center;
+			border: 1px solid $gray;
+			border-radius: 0.2rem;
+			background-color: white;
+		}
+	}
+	.response-buttons2 {
+		button {
+			&:first-of-type {
+				margin-right: 1.8%;
+			}
+			width: 48%;
+			display: inline-block;
+			text-align: left;
+			transition: all .35s;
+			&:hover {
+				background-color: $gray;
+				color: white;
+			}
 		}
 	}
 }

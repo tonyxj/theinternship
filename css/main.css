@@ -436,6 +436,66 @@ th {
   padding: 0;
 }
 
+@keyframes bounce {
+  /* line 38, ../sass/partials/_variables.scss */
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 43, ../sass/partials/_variables.scss */
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  /* line 48, ../sass/partials/_variables.scss */
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  /* line 53, ../sass/partials/_variables.scss */
+  95% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+@-webkit-keyframes bounce {
+  /* line 59, ../sass/partials/_variables.scss */
+  0%, 16%, 53%, 85%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 64, ../sass/partials/_variables.scss */
+  42%, 45% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  /* line 69, ../sass/partials/_variables.scss */
+  75% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  /* line 74, ../sass/partials/_variables.scss */
+  95% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+/* line 79, ../sass/partials/_variables.scss */
+.bounce {
+  animation-duration: 1s;
+  animation-name: bounce;
+  transform-origin: center bottom;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+}
+
 /* line 4, ../sass/main.scss */
 html, body {
   font-family: 'Lato', Myriad, sans-serif;
@@ -452,7 +512,7 @@ html, body {
 header {
   position: relative;
 }
-/* line 13, ../sass/partials/_variables.scss */
+/* line 17, ../sass/partials/_variables.scss */
 header:after {
   content: "";
   display: table;
@@ -465,35 +525,71 @@ header nav {
   left: 18%;
 }
 /* line 21, ../sass/main.scss */
+header nav .current-page {
+  opacity: 1;
+  color: #595959;
+  border-bottom: 3px solid rgba(89, 89, 89, 0.9);
+}
+/* line 26, ../sass/main.scss */
 header nav a {
   font-size: 1.05rem;
   color: #797979;
   text-decoration: none;
   padding: 5px;
+  padding-bottom: 14px;
   margin-right: 0.9rem;
-  transition: color 0.35s;
+  transition: all 0.35s;
+  opacity: 0.8;
 }
-/* line 29, ../sass/main.scss */
+/* line 36, ../sass/main.scss */
 header nav a:hover {
   color: #595959;
+  opacity: 1;
 }
-/* line 32, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 header nav a:first-of-type {
   padding-left: 0;
 }
 
-/* line 39, ../sass/main.scss */
+/* line 47, ../sass/main.scss */
+.current-tab {
+  opacity: 1 !important;
+}
+
+/* line 51, ../sass/main.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 55, ../sass/main.scss */
+.notify {
+  position: relative;
+}
+/* line 57, ../sass/main.scss */
+.notify:after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: -0rem;
+  right: -0.4rem;
+  background-image: url("../img/notify.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* line 70, ../sass/main.scss */
 .header-inner {
   background-color: #F0F0F0;
   position: relative;
 }
-/* line 13, ../sass/partials/_variables.scss */
+/* line 17, ../sass/partials/_variables.scss */
 .header-inner:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 43, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 .header-inner h1 {
   font-family: 'Alegreya', Garamond, serif;
   font-size: 1.35rem;
@@ -501,23 +597,24 @@ header nav a:first-of-type {
   display: inline-block;
   margin-left: 1.5rem;
 }
-/* line 51, ../sass/main.scss */
+/* line 82, ../sass/main.scss */
 .header-inner .search-container {
   display: inline-block;
-  float: right;
   width: 16%;
   margin-right: 18%;
+  float: right;
   position: relative;
 }
-/* line 57, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 .header-inner .search-container .search-bar {
+  display: inline-block;
   border: 1px solid rgba(121, 121, 121, 0.3);
   margin-top: 0.87rem;
   height: 1.7rem;
   border-radius: 15px;
   width: 100%;
 }
-/* line 64, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 .header-inner .search-container:after {
   content: "";
   background-image: url("../img/questionmark.png");
@@ -530,7 +627,7 @@ header nav a:first-of-type {
   opacity: 0.6;
   position: absolute;
 }
-/* line 77, ../sass/main.scss */
+/* line 109, ../sass/main.scss */
 .header-inner .settings {
   width: 1.8rem;
   height: 1.8rem;
@@ -543,61 +640,61 @@ header nav a:first-of-type {
   opacity: 0.8;
 }
 
-/* line 90, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .main-content {
   clear: both;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   width: 64;
   margin-left: 18%;
   margin-right: 18%;
 }
 
-/* line 98, ../sass/main.scss */
+/* line 130, ../sass/main.scss */
 .self-snippet {
   width: 28%;
   float: left;
 }
-/* line 101, ../sass/main.scss */
+/* line 133, ../sass/main.scss */
 .self-snippet .profile-img {
   float: left;
   width: 48%;
 }
-/* line 105, ../sass/main.scss */
+/* line 137, ../sass/main.scss */
 .self-snippet .self-intro {
   width: 48%;
   float: right;
   color: #797979;
 }
-/* line 109, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 .self-snippet .self-intro .my-name {
   color: #595959;
 }
-/* line 112, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 .self-snippet .self-intro .twitter-handle {
   font-weight: 400;
 }
-/* line 115, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 .self-snippet .self-intro p {
   margin-top: 0.8rem;
   font-size: 0.8rem;
   font-weight: 300;
 }
-/* line 121, ../sass/main.scss */
+/* line 153, ../sass/main.scss */
 .self-snippet .self-status {
   color: #595959;
   clear: both;
   padding-top: 1.2rem;
 }
-/* line 125, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 .self-snippet .self-status h3 {
   position: relative;
 }
-/* line 127, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 .self-snippet .self-status h3 span {
   color: #797979;
   font-weight: 400;
 }
-/* line 131, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .self-snippet .self-status h3:after {
   content: "";
   position: absolute;
@@ -609,13 +706,13 @@ header nav a:first-of-type {
   width: 0.9rem;
   height: 0.9rem;
 }
-/* line 143, ../sass/main.scss */
+/* line 175, ../sass/main.scss */
 .self-snippet .self-status p {
   margin-top: 0.5rem;
   color: #797979;
   font-weight: 300;
 }
-/* line 148, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
 .self-snippet .self-status a {
   color: #595959;
   font-weight: 300;
@@ -623,13 +720,13 @@ header nav a:first-of-type {
   margin-top: 0.5rem;
 }
 
-/* line 157, ../sass/main.scss */
+/* line 189, ../sass/main.scss */
 .feed {
   width: 70%;
   float: right;
 }
 
-/* line 163, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 .status-update input {
   width: 100%;
   border-radius: 2rem;
@@ -638,98 +735,156 @@ header nav a:first-of-type {
   padding: 0.7rem 1.4rem;
   font-size: 1.1rem;
 }
-/* line 5, ../sass/partials/_variables.scss */
+/* line 9, ../sass/partials/_variables.scss */
 .status-update input.placeholder {
   color: rgba(121, 121, 121, 0.5);
 }
-/* line 6, ../sass/partials/_variables.scss */
+/* line 10, ../sass/partials/_variables.scss */
 .status-update input:-moz-placeholder {
   color: rgba(121, 121, 121, 0.5);
 }
-/* line 7, ../sass/partials/_variables.scss */
+/* line 11, ../sass/partials/_variables.scss */
 .status-update input::-moz-placeholder {
   color: rgba(121, 121, 121, 0.5);
 }
-/* line 8, ../sass/partials/_variables.scss */
+/* line 12, ../sass/partials/_variables.scss */
 .status-update input:-ms-input-placeholder {
   color: rgba(121, 121, 121, 0.5);
 }
-/* line 9, ../sass/partials/_variables.scss */
+/* line 13, ../sass/partials/_variables.scss */
 .status-update input::-webkit-input-placeholder {
   color: rgba(121, 121, 121, 0.5);
 }
 
-/* line 176, ../sass/main.scss */
+/* line 208, ../sass/main.scss */
 .friend-feed {
   color: #595959;
   margin-top: 2.5rem;
   margin-bottom: 5rem;
 }
-/* line 181, ../sass/main.scss */
+/* line 213, ../sass/main.scss */
 .friend-feed .blue {
   color: rgba(63, 161, 255, 0.9);
 }
-/* line 184, ../sass/main.scss */
+/* line 216, ../sass/main.scss */
 .friend-feed .more-link {
   text-decoration: underline;
 }
-/* line 187, ../sass/main.scss */
+/* line 219, ../sass/main.scss */
 .friend-feed .entry {
   clear: both;
   margin-bottom: 1.3rem;
 }
-/* line 13, ../sass/partials/_variables.scss */
+/* line 17, ../sass/partials/_variables.scss */
 .friend-feed .entry:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 192, ../sass/main.scss */
+/* line 224, ../sass/main.scss */
 .friend-feed .profile-img {
   width: 6%;
   float: left;
 }
-/* line 196, ../sass/main.scss */
+/* line 228, ../sass/main.scss */
 .friend-feed .entry-content {
   width: 92.7%;
   float: right;
 }
-/* line 199, ../sass/main.scss */
+/* line 231, ../sass/main.scss */
 .friend-feed .entry-content h3 span {
   color: rgba(121, 121, 121, 0.75);
   font-size: 0.85rem;
   font-weight: 400;
 }
-/* line 204, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 .friend-feed .entry-content p {
   font-weight: 300;
 }
-/* line 207, ../sass/main.scss */
+/* line 239, ../sass/main.scss */
 .friend-feed .entry-content .with-img {
   width: 65%;
   float: left;
 }
-/* line 211, ../sass/main.scss */
+/* line 243, ../sass/main.scss */
 .friend-feed .entry-content img {
   width: 34%;
   float: right;
 }
 
-/* line 219, ../sass/main.scss */
-.social {
+/* line 250, ../sass/main.scss */
+.social-buttons {
   clear: both;
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
   float: right;
 }
-/* line 223, ../sass/main.scss */
-.social a {
+/* line 254, ../sass/main.scss */
+.social-buttons a {
   font-size: 0.8rem;
   color: #797979;
   margin-left: 0.3rem;
   font-weight: 300;
   transition: color 0.35s;
 }
-/* line 229, ../sass/main.scss */
-.social a:hover {
+/* line 30, ../sass/partials/_variables.scss */
+.social-buttons a:hover {
   color: #595959;
+}
+
+/* line 259, ../sass/main.scss */
+#overlay, #overlay2 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+/* line 268, ../sass/main.scss */
+#confirm-box, #confirm-box2 {
+  color: #595959;
+  width: 40%;
+  margin: 15% 30%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 3rem 2rem;
+}
+/* line 275, ../sass/main.scss */
+#confirm-box p, #confirm-box2 p {
+  font-size: 1.2rem;
+  margin-right: 10%;
+  margin-bottom: 1.5rem;
+}
+/* line 279, ../sass/main.scss */
+#confirm-box p:hover, #confirm-box2 p:hover {
+  cursor: pointer;
+}
+/* line 284, ../sass/main.scss */
+#confirm-box .response-buttons button, #confirm-box .response-buttons2 button, #confirm-box2 .response-buttons button, #confirm-box2 .response-buttons2 button {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: 1px solid #595959;
+  border-radius: 0.2rem;
+  background-color: white;
+}
+/* line 285, ../sass/main.scss */
+#confirm-box .response-buttons button:first-of-type, #confirm-box .response-buttons2 button:first-of-type, #confirm-box2 .response-buttons button:first-of-type, #confirm-box2 .response-buttons2 button:first-of-type {
+  margin-right: 0.5rem;
+}
+/* line 296, ../sass/main.scss */
+#confirm-box .response-buttons2 button, #confirm-box2 .response-buttons2 button {
+  width: 48%;
+  display: inline-block;
+  text-align: left;
+  transition: all .35s;
+}
+/* line 297, ../sass/main.scss */
+#confirm-box .response-buttons2 button:first-of-type, #confirm-box2 .response-buttons2 button:first-of-type {
+  margin-right: 1.8%;
+}
+/* line 304, ../sass/main.scss */
+#confirm-box .response-buttons2 button:hover, #confirm-box2 .response-buttons2 button:hover {
+  background-color: #595959;
+  color: white;
 }
